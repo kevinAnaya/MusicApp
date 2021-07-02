@@ -4,6 +4,11 @@
 .fondo{
   background-color: black;
   color: white !important;
+  height: 100%;
+}
+
+.tam{
+  height: 400px;
 }
 
 @font-face {
