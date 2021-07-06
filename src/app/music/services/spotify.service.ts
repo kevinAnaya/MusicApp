@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
 
-  public url: string = 'https://api.spotify.com/v1/search?query=metallica&limit=20&type=artist';
 
   artistas: any[] = [];
 
@@ -16,17 +15,20 @@ export class SpotifyService {
     
   }
 
-  getArtistas(){    
+  getArtistas(termino:String){    
+
+    let url = `https://api.spotify.com/v1/search?query=${termino}&limit=20&type=artist`;
+
     let headers = new HttpHeaders({
-      'authorization' : 'Bearer BQDAe1cDguIq1fVKQpTzZ-DRskcv1v9Bz4wxKJDdVTxr3M2LfD0zSJSVMluCnY_kUXuLiIpDkHLPLLoRtJU'
+      'authorization' : 'Bearer BQDjtFl6jIQHscgxg8iMyQ35RToe7-ZenxfNCFtvhSlXRy-8rVajk5gsLSYtprbgSWB0jPXP5KqUBwHaE7c'
     })
 
-    return this.http.get(this.url, { headers })
+    return this.http.get(url, { headers })
                .pipe(
                  map( (resp:any ) => {
                    this.artistas = resp.artists.items 
                    return this.artistas
-                 })
+                 }) 
                )
   }
 

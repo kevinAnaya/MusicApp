@@ -3,13 +3,12 @@
 
 .fondo{
   background-color: black;
-  color: white !important;
-  height: 100%;
 }
 
-.tam{
-  height: 400px;
+.puntero{
+  cursor: pointer;
 }
+
 
 @font-face {
     font-family: Poppins-Regular;

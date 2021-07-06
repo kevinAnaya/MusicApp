@@ -1,3 +1,43 @@
 <div class="container">
-    
+    <div class="row">
+
+        <div class="col-md-3">
+            <h1>Buscar</h1>
+            <hr>
+
+                <label for="termino" class="col-form-label">Buscar artista:</label>
+
+                <input type="text"
+                       class="form-control"
+                       placeholder="Buscar"
+                       [(ngModel)]="termino">
+
+                <button class="btn btn-primary mt-2"
+                        type="submit"
+                        (click)="buscarArtista()">
+                    Buscar
+                </button>
+
+        </div>
+
+        <div class="col-md-9">
+            <h1 class="text-capitalize">{{ termino }}</h1>
+            <hr *ngIf="termino">
+
+            <div class="row">
+
+                <div *ngFor="let item of artistas"
+                     class="col-md-3 text-center mt-1 puntero">
+
+                    <img [src]="item.images | sinfoto"
+                         class="img-thumbnail">
+                    <p>{{ item.name }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>

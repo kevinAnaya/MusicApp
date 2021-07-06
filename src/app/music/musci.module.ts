@@ -6,18 +6,22 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { SinfotoPipe } from './pipes/sinfoto.pipe';
 
 
 @NgModule({
   declarations: [
   DashboardComponent,
   HomeComponent,
-  BuscarComponent
+  BuscarComponent,
+  SinfotoPipe
 ],
   imports: [
     CommonModule,
     MusciRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class MusciModule { }
