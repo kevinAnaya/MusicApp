@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./music/musci.module').then( m => m.MusciModule)
   },
   {
-    path: '**', pathMatch: 'full', redirectTo: 'auth'
+    path: '**', redirectTo: 'auth'
   }
 ];
 

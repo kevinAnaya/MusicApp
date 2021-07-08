@@ -8,6 +8,7 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
+import { ArtistComponent } from './pages/artist/artist.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SinfotoPipe } from './pipes/sinfoto.pipe';
   DashboardComponent,
   HomeComponent,
   BuscarComponent,
-  SinfotoPipe
+  SinfotoPipe,
+  ArtistComponent
 ],
   imports: [
     CommonModule,
