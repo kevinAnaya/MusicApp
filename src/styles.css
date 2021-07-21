@@ -5,6 +5,10 @@
   background-color: black;
 }
 
+.tamaño{
+  font-size: 1em;
+}
+
 .puntero{
   cursor: pointer;
 }

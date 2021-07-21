@@ -21,7 +21,6 @@ export class RegisterComponent {
 
   registro(){
     console.log(this.miFormulario.value);
-    console.log(this.miFormulario.valid);
     this.router.navigateByUrl('/dashboard')
   }
 
