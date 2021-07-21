@@ -1,3 +1,51 @@
 <div class="container mt-1">
-    <h1> {{artista.name}} </h1>
+    <div class="row">
+        <div class="col-md-3">
+            <img [src]="artista.images | sinfoto" class="img-thumbnail">
+        </div>
+
+        <div class="col-md-9">
+            <h1>{{ artista.name }}</h1>
+            <hr>
+            <button class="btn btn-outline-success">Abrir</button>
+            &nbsp;
+            <button [routerLink]="['/dashboard/buscar']" class="btn btn-outline-danger">Volver</button>
+        </div>
+    </div>
+</div>
+
+<h1 class="container mt-1">Top Tracks</h1>
+
+<div class="container mt-1">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Foto</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Popularidad</th>
+                      <th scope="col">Escuchar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of tracks; let i = index">
+                      <th scope="row">{{ i+1 }}</th>
+                      <td>
+                          <img [src]="item.album.images | sinfoto" class="tam">
+                      </td>
+                      <td>{{ item.name}}</td>
+                      <td>{{ item.popularity }}%</td>
+                      <td>
+                          <audio controls>
+                            <source [src]="item.preview_url">
+                          </audio>
+
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
 </div>

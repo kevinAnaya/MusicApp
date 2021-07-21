@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import  Swal  from 'sweetalert2'
 
 @Component({
   selector: 'app-buscar',
@@ -25,6 +26,9 @@ export class BuscarComponent implements OnInit {
     this._spotyS.getArtistas(this.termino)
         .subscribe( artistas => {
           this.artistas = artistas
+          if(this.artistas.length <= 0){
+            Swal.fire('error', `no se encontró artista relacionado al termino: ${this.termino}`, 'error')
+          } 
         })
   }
 
