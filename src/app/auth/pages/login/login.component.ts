@@ -23,19 +23,18 @@ export class LoginComponent {
                private authService: AuthService) { }
 
   login(){
-    console.log(this.miFormulario.value);
-    
+
     //extraemos el email y el password del value del formulario 
     const { email, password } = this.miFormulario.value;
 
     this.authService.login( email, password)
         .subscribe( ok => {
-          if ( ok ) {
+          if ( ok === true ) {
             this.router.navigateByUrl('/dashboard/home')
           }else{
-            //mostrar mensaje de error
+            Swal.fire('Error', ok, 'error') 
           }
         })
-  }
+  }  
 
 }

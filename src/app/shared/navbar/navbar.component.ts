@@ -11,14 +11,15 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class NavbarComponent {
 
   get usuario(){
-    return this.authService.usuario
+    return this.authService.usuario 
   }
 
   constructor( private router: Router,
                private authService: AuthService) { }
 
   logout(){
-    this.router.navigateByUrl('/auth/login')
+    this.authService.logout();
+    this.router.navigateByUrl('/auth/login');
   }
 
 }
